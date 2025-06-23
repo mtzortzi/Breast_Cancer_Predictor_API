@@ -1,6 +1,6 @@
 # Breast Cancer Predictor API
 
-This project trains a **Random Forest** model to classify breast cancer tumors as benign or malignant. It uses:
+This microservice trains multiple classification models to predict breast cancer diagnoses, logs them using MLflow, and exposes the best one as a REST API via FastAPI.
 
 - **MLflow** for model tracking and artifact logging
 - **FastAPI** for serving predictions as a REST API
