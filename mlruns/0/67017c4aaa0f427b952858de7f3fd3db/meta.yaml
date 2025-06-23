@@ -1,0 +1,14 @@
+artifact_uri: file:///home/marianna/mlflow_projects/mlflow_breast_cancer/mlruns/0/67017c4aaa0f427b952858de7f3fd3db/artifacts
+end_time: 1750627288236
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 67017c4aaa0f427b952858de7f3fd3db
+run_name: rare-mule-3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750627285324
+status: 3
+tags: []
+user_id: marianna

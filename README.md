@@ -1,26 +1,29 @@
-# Breast Cancer Predictor API (MLflow + FastAPI)
+# Dataset 
 
-This project trains a **Random Forest** model to classify breast cancer tumors as benign or malignant. It uses:
-
-- **MLflow** for model tracking and artifact logging
-- **FastAPI** for serving predictions as a REST API
+The dataset comes built-in with scikit-learn, and it’s officially called the Breast Cancer Wisconsin Diagnostic Dataset.
 
 
-- Create Environment & Install Requirements
-  ``` bash
-  conda create -n mlflow-demo python=3.10
-  conda activate mlflow-demo
-  pip install -r requirements.txt
-  ```
-  
-- Train the Model
-  This will train the model, log it to mlruns/, and print the local model path
+# Binary classification.
 
-  ``` bash
-  python train.py
-  ```
-  
-- Serve with FastAPI
-  ``` bash
-  uvicorn app:app --reload
-  ```
+We want to predict whether a tumor is benign (non-cancerous) or malignant (cancerous) based on some measurements from a digitized image of a fine needle aspirate (FNA) of a breast mass.
+
+
+## Target Variable
+target: 0 means malignant, 1 means benign
+
+
+# Features (input variables)
+
+There are 30 numerical features, like:
+
+mean radius: average size of the tumor
+
+mean texture: variation in texture
+
+mean perimeter, mean area
+
+mean smoothness: smoothness of cell edges
+
+Each is a measurement calculated over the shape or texture of the tumor in an image.
+
+
