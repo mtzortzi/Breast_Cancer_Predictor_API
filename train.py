@@ -29,18 +29,18 @@ def train_model():
 
 
     with mlflow.start_run(nested=False) as run:
-       
-        clf = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
+
+        params = {"n_estimators":100, "max_depth":5, "random_state":42}
+        clf = RandomForestClassifier(**params)
         clf.fit(X_train, y_train)
 
         preds = clf.predict(X_test)
         acc = accuracy_score(y_test, preds)
 
 
-        mlflow.log_param("n_estimators", 100)
-        mlflow.log_param("max_depth", 5)
+        mlflow.log_params(params)
         mlflow.log_metric("accuracy", acc)
-        model_uri = mlflow.sklearn.log_model(clf, name="model")
+        model_uri = mlflow.sklearn.log_model(clf, name="sklearn-model", input_example=X_train, registered_model_name="sk-learn-random-forest-classification-model")
 
         print(f'Model logged at: {model_uri}')
         print("Logged model to:", mlflow.get_artifact_uri("model"))
